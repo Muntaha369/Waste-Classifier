@@ -16,7 +16,7 @@ app.add_middleware(
 )
 
 # Load model once at startup, not per-request
-model = tf.keras.models.load_model("models/waste_classifier.kerras")  # or .keras
+model = tf.keras.models.load_model("models/waste_classifier.keras")  # or .keras
 class_names = ['Hazardous', 'Non-Recyclable', 'Organic', 'Recyclable'] # your actual classes, in order
 
 IMG_SIZE = (128, 128)  # match your training input size

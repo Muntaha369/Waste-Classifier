@@ -18,6 +18,7 @@ An AI-powered web application that classifies images of waste into standard envi
 
 ```text
 waste_classifier/
+├── assets/              # Architecture diagrams & documentation assets
 ├── client/              # Next.js 16 (React 19 + Tailwind CSS) Frontend
 │   ├── app/             # Next.js App Router components & pages
 │   ├── public/          # Static assets
@@ -43,6 +44,26 @@ waste_classifier/
 - **Framework**: FastAPI + Uvicorn
 - **Machine Learning**: TensorFlow / Keras
 - **Image Processing**: Pillow (PIL), NumPy
+
+---
+
+## 🧠 CNN Model Architecture
+
+The classification core is based on a **Convolutional Neural Network (CNN)** designed for feature extraction and probabilistic multi-class classification:
+
+![Convolutional Neural Network Architecture](assets/cnn_architecture.png)
+
+### Key Architectural Stages:
+1. **Input Layer**: Receives resized image data.
+2. **Feature Extraction (Convolution + ReLU & Pooling)**:
+   - **Convolutional Layers**: Apply kernels/filters across spatial dimensions to extract visual features (edges, textures, shapes).
+   - **ReLU Activation**: Applies non-linearity to learn complex visual features.
+   - **Pooling Layers**: Reduces feature map dimensions while preserving dominant spatial representations.
+3. **Classification (Flatten & Fully Connected Layers)**:
+   - **Flatten Layer**: Converts 2D feature maps into a 1D vector.
+   - **Fully Connected (Dense) Layers**: Combines extracted features for final pattern matching.
+4. **Probabilistic Distribution (SoftMax)**:
+   - Applies SoftMax activation to produce probability distributions across target waste categories.
 
 ---
 
